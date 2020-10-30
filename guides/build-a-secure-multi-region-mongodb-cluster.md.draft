@@ -1,0 +1,16 @@
+---
+layout: layout-page-docs
+css-section: docs
+parent: "Tutorials and Guides"
+parentPath: guides
+title: "Build a secure multi-region mongodb cluster"
+subtitle: "Enclave Documentation"
+contentPreview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus elementum, nunc in faucibus malesuada, mi augue congue nunc, id vehicula diam tellus eu sem. Maecenas ac egestas mi."
+indexed: true
+---
+
+# {{page.title}}
+
+## Heading
+
+No content

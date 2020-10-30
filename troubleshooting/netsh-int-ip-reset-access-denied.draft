@@ -1,0 +1,41 @@
+---
+layout: layout-page-docs
+css-section: docs-troubleshooting
+parent: Troubleshooting
+parentPath: troubleshooting
+title: "`netsh int ip reset` Access Denied"
+subtitle: "test test test"
+contentPreview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus elementum, nunc in faucibus malesuada, mi augue congue nunc, id vehicula diam tellus eu sem. Maecenas ac egestas mi."
+indexed: true
+---
+
+# {{page.title}}
+
+
+1. netsh winsock reset
+1. netsh int ip reset
+
+```
+netsh int ipv4 reset
+Resetting interface, OK!
+Resetting Unicast Address, OK!
+Resetting Neighbor, OK!
+Resetting Path, OK!
+Resetting , failed.
+Access is denied.Resetting , OK!
+Restart the computer to complete this action
+```
+
+1. receive the message "Access is denied."
+1. follow solution outlined here to resolve https://davidvielmetter.com/tricks/netsh-int-ip-reset-says-access-denied/
+
+    HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Nsi
+    Expand the subfolder named {eb004a00-9b1a-11d4-9123-0050047759bc} and right-click the subfolder named 26. Select Permissions... and ensure that for Everyone the Full Control box is checked.
+
+1. run `netsh int ip reset` again. Expect "Resetting , OK!Restart the computer to complete this action"
+1. reboot the system.
+
+
+... nervous about deploying this as an article as the proposed fix is to give EVERYONE has FULL CONTROL which doesn't feel right.
+    wait for this issue to crop up in the wild again and capture more information before formalising a troubleshooting document
+

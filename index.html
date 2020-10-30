@@ -1,0 +1,140 @@
+---
+layout: layout-page-generic
+css-section: docs-index-page
+title: "Documentation"
+---
+
+<section id="section-hero-container">   
+    <div id="hero">
+        <h1>Enclave Documentation</h1>
+        <p>Deploy, manage and scale your Enclave networks</p>
+    </div>
+</section>
+
+
+<section id="section-tiles">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="tile">
+                    <a class="setup-guide" href="/quick-start">
+                        <h2><i class="fa fa-wrench setup-guide" aria-hidden="true"></i> Quick Start Guide</h2>
+                        <p>Linux and Windows guide to help get your first network up and running quickly.</p>
+                        <p class="learn-more">Learn More</p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="tile">
+                    <a class="concepts" href="/handbook/">
+                        <h2><i class="fa fa-lock concepts" aria-hidden="true"></i> Enclave Handbook</h2>
+                        <p>Learn how to install, run and connect systems together securely using Enclave.</p>
+                        <p class="learn-more">Learn More</p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="tile">
+                    <a class="tile api" href="/api/">
+                        <h2><i class="fa fa-plug api" aria-hidden="true"></i> APIs, Plugins and Automation</h2>
+                        <p>Integrate, control and extend Enclave networks through APIs and automation.</p>
+                        <p class="learn-more">Learn More</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<section id="section-search">
+    <div class="container">
+        <div class="row">
+            <div id="search-container">
+                <h1>Search the Documentation</h1>
+                <script type="text/javascript" src="/js/lib/lunr-2.3.6.js"></script>
+                {% include search-lunr.html %}
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<section id="section-links">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+
+                <h1 class="tutorials">Tutorials and Guides</h1>
+                <div class="tile">
+
+                    {% for page in site.pages %}
+                        {% if page.path contains "guides/index" %}{% continue %}{% endif %}
+                        {% if page.path contains ".draft" %}{% continue %}{% endif %}
+                        {% if page.path contains "guides/" %}
+                            {% if page.path contains ".md" %}
+                                <div class="item">
+                                    <a href="{{page.url}}">
+                                        <h2>{{page.title}}</h2>
+                                        <p>{{page.contentPreview}}</p>
+                                    </a>
+                                </div>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+
+                </div>
+
+            </div>
+            <div class="col-sm-6">
+
+                <h1>Knowledge Base</h1>
+                <ul>
+                    
+                    {% for page in site.pages %}
+                        {% if page.path contains "kb/index" %}{% continue %}{% endif %}
+                        {% if page.path contains ".draft" %}{% continue %}{% endif %}
+                        {% if page.path contains "kb/" %}
+                            <li>
+                                <div class="item">
+                                    <a href="{{page.url}}">
+                                        <h2>{{page.title}}</h2>
+                                        <p>{{page.contentPreview}}</p>
+                                    </a>
+                                </div>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+
+                </ul>
+    
+                <h1>Troubleshooting</h1>
+                <ul>
+                        
+                    {% for page in site.pages %}
+                        {% if page.path contains "troubleshooting/index" %}{% continue %}{% endif %}
+                        {% if page.path contains ".draft" %}{% continue %}{% endif %}
+                        {% if page.path contains "troubleshooting/" %}  
+                            <li>
+                                <div class="item">
+                                    <a href="{{page.url}}">
+                                        <h2>{{page.title}}</h2>
+                                        <p>{{page.contentPreview}}</p>
+                                    </a>
+                                </div>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+</section>
+

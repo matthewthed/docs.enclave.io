@@ -1,0 +1,79 @@
+---
+---
+
+/**
+* TocJS (https://github.com/nghuuphuoc/tocjs)
+*
+* Generate a table of contents based on headings
+*
+* @author		http://twitter.com/nghuuphuoc
+* @copyright	(c) 2013 - 2014 Nguyen Huu Phuoc
+* @license		MIT
+* @version		https://github.com/nghuuphuoc/tocjs/commit/09e1aaa07dc83c50aeb3c30bcd423aa321a9e148
+* 
+* 2017.08.01	Modified sheet to fix desired style
+* 
+*/
+
+
+
+/* toc border 
+.toc { border: 1px solid #ddd; border-radius: 4px 4px 0 0; }
+.toc .toc-heading { background-color: #f5f5f5; font-weight: bold; } */
+
+.toc { }
+.toc.affix { position: static; }
+.toc-heading { color: #333333; border-radius: 6px 6px 0 0; border-bottom: 1px solid #e5e5e5; padding: 10px 15px; font-weight: normal; font-size: 14px; margin: 0 0 10px 0; }
+.toc-heading i { padding-right: 5px; font-size: 14px; }
+.toc-ul-root li a { font-size: 13px; font-family: "Helvetica"; letter-spacing: -0.4px;  }
+
+
+
+.toc .nav > li a { padding-top: 3px; padding-bottom: 3px; border-left: 1px solid transparent; }
+
+.toc .nav > li.active > a,
+.toc .nav > li.active > a:hover ,
+.toc .nav > li.active > a:focus { color: #337ab7; } 
+
+.toc .nav > li.active > a:before,
+.toc .nav > li.active > a:hover::before ,
+.toc .nav > li.active > a:focus::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: -1px;
+    bottom: 0px;
+    width: 6px;
+    background: rgba(51, 122, 183, 0.2);
+}
+
+.toc .toc-link-1 { padding-left: 14px; color: #777; font-weight: normal; }
+.toc .toc-link-2 { padding-left: 30px; color: #777; font-weight: normal; }
+.toc .toc-link-3 { padding-left: 55px; color: #777; font-weight: normal; }
+.toc .toc-link-4 { padding-left: 80px; color: #777; font-weight: normal; }
+.toc .toc-link-5 { padding-left: 105px; color: #777; font-weight: normal; }
+.toc .toc-link-6 { padding-left: 130px; color: #777; font-weight: normal; }
+
+.toc .nav > li > a:focus, 
+.toc .nav > li > a:hover { text-decoration: none; background-color: #f4f4f4; transition: all .025s ease-in-out; border-left: 1px solid #dddddd; }
+
+.toc .nav > li.active:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    width: 1px;
+    background: #ddd;
+}
+
+.toc .nav .nav { display: none; }
+.toc .nav .nav > li > a { }
+
+@media screen and (min-width: 992px) and (min-height: 700px) 
+{
+	.toc.affix { position: fixed; }
+    .toc .nav > .active > ul { display: block; }
+}

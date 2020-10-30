@@ -1,0 +1,16 @@
+---
+layout: layout-page-docs
+css-section: docs-handbook
+parent: "Enclave Handbook"
+parentPath: handbook
+title: "Handbook Test Article"
+subtitle: "test test test"
+contentPreview: ""
+indexed: true
+---
+
+# {{page.title}}
+
+## Heading
+
+No content, test page.

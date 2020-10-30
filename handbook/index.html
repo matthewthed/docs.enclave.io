@@ -1,0 +1,171 @@
+---
+layout: layout-page-docs-index-page-no-toc
+css-section: docs-handbook
+title: "Enclave Handbook"
+subtitle: "In-depth guide to Enclave"
+---
+
+
+<section id="section-troubleshooting-index-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+
+                <h1>{{page.title}}</h1>
+
+                <blockquote>
+                    <p><strong>Please note:</strong> We are actively working to develop and improve the content in this part of our documentation. If you have a question which our documentation doesn't currently address please contact us by emailing <a href="mailto:support@enclave.io">support@enclave.io</a>.</p>
+                </blockquote>
+
+                <ul>
+                    <li>Community</li>
+
+                    <li>Glossary</li>
+
+                    <li>Installation
+                        <ul>
+                            <li>Installing Enclave Network Fabric on Windows, Linux, Docker, MacOS or a Synology NAS</li>
+                            <li><a href="./installing-enclave/managing-dependencies">Prerequisites and dependencies</a></li>
+                        </ul>
+                    </li>
+
+                    <li>Using the Portal
+                        <ul>
+                            <li>Account creation and security</li>
+                            <li>License key provisioning</li>
+                        </ul>
+                    </li>
+
+                    <li>Using the Fabric
+                        <ul>
+                            <li>Starting and stopping the Fabric</li>
+                            <li>Configuration</li>
+                            <li>Assigning license keys</li>
+                            <li>Telemetry</li>
+                            <li>Upgrading the fabric</li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        Security Architecture
+                        <ul>
+                            <li>Overview</li>
+                            <li>Software deployment</li>
+                            <li>Patch management</li>
+                            <li>Configuration and integrity management</li>
+                            <li>Data retention and backup</li>
+                            <li>Directory services integration</li>
+                            <li>Firewall configuration requirements</li>
+                            <li>Endpoint detection and response solution integration</li>
+                            <li>Certificate authority</li>
+                            <li>Single sign on</li>
+                            <li>Multi-factor and context based authentication</li>
+                            <li>Network micro-segmentation</li>
+                            <li>Host firewall configuration</li>
+                            <li>Data in-motion encryption</li>
+                            <li>Role based access control (RBAC)</li>
+                            <li>Network access control</li>
+                            <li>Logging and auditing</li>
+                            <li>Data loss prevention</li>
+                            <li>Security and incident event management</li>
+                            <li>Reporting vulnerabilities</li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        Internals
+                        <ul>
+                            <li><a href="./enclave-internals/architecture">Architecture</a></li>
+                            <li>Connectivity requirements</li>
+                            <li>Runtime security considerations</li>
+                            <li>End-to-end encryption and key management</li>
+                            <li>Threat model</li>
+                            <li>Internal timers and events</li>
+                            <li>NAT and UDP/TCP hole punching</li>
+                            <li>Certificates, expiry and revocation</li>
+                            <li>Private IP addressing</li>
+                            <li>Safe ARP and ARP poisoning protections</li>
+                            <li>Local domain name server</li>
+                            <li>DNS forwarding</li>
+                            <li>Multicast traffic</li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        Protocol
+                        <ul>
+                            <li>Specification</li>
+                        </ul>
+                    </li>
+
+                    <li>Fabric Commands (CLI)
+                        <ul>
+                            <li>license</li>
+                            <li>start</li>
+                            <li>stop</li>
+                            <li>status</li>
+                            <li>add</li>
+                            <li>remove</li>
+                            <li>enable</li>
+                            <li>disable</li>
+                            <li>help</li>
+                            <li>version</li>
+                            <li>list-adapters</li>
+                            <li>install-adapter</li>
+                            <li>remove-adapter</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h2>Knowledge Base</h2>
+
+                <ul>
+                    {% for page in site.pages %}
+                        {% if page.path contains "kb/index" %}{% continue %}{% endif %}
+                        {% if page.path contains ".draft" %}{% continue %}{% endif %}
+                        {% if page.path contains "kb/" %}
+                            <li>
+                                <a href="{{page.url}}">{{page.title}}</a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+
+                <h2>Tutorials and Guides</h2>
+
+                <ul>
+                    {% for page in site.pages %}
+                        {% if page.path contains "api/" %}{% continue %}{% endif %}
+                        {% if page.path contains "handbook/" %}{% continue %}{% endif %}
+                        {% if page.path contains "kb/" %}{% continue %}{% endif %}
+                        {% if page.path contains "protocol/" %}{% continue %}{% endif %}
+                        {% if page.path contains "troubleshooting/" %}{% continue %}{% endif %}
+                        {% if page.path contains ".draft" %}{% continue %}{% endif %}
+                        {% if page.path contains "/" %}
+                            {% if page.path contains ".md" %}
+                                <li>
+                                    <a href="{{page.url}}">{{page.title}}</a>
+                                </li>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+
+                <h2>Troubleshooting</h2>
+
+                <ul>
+                    {% for page in site.pages %}
+                        {% if page.path contains "troubleshooting/index" %}{% continue %}{% endif %}
+                        {% if page.path contains ".draft" %}{% continue %}{% endif %}
+                        {% if page.path contains "troubleshooting/" %}
+                            <li>
+                                <a href="{{page.url}}">{{page.title}}</a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</section>

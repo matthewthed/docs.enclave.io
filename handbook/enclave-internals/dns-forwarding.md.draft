@@ -1,0 +1,51 @@
+---
+layout: layout-page-docs
+css-section: docs-handbook
+parent: "Enclave Handbook"
+parentPath: handbook
+title: "DNS Forwarding"
+subtitle: "test test test"
+contentPreview: ""
+indexed: true
+---
+
+# {{page.title}}
+
+There is a how-to guide which talks about HOW to set this up, this it not it.
+
+This page should be about how DNS forwarding works under the hood. 
+
+How it binds to each instance of the enclave interface and listens on the internal IP. How external parties can't query it. 
+
+What names are allow, what names aren't allowed. How does it do shortening of spaces into hyphens, how does it remove triple hyphens and can you disable it.
+
+> netsh interface ip show config | findstr DNS
+> netsh interface ip set dns "Universe" static 100.80.191.19	(checks dns server is valid and responsive!)
+> ipconfig /displaydns
+
+
+C:\Users\root>netsh interface ip show config | findstr DNS
+    Statically Configured DNS Servers:    100.113.163.166
+    DNS servers configured through DHCP:  None
+    Statically Configured DNS Servers:    100.94.6.1
+    DNS servers configured through DHCP:  None
+    DNS servers configured through DHCP:  194.168.4.100
+    Statically Configured DNS Servers:    None
+    Statically Configured DNS Servers:    None
+
+
+netsh interface ip set dns "Universe" static 100.121.169.93
+netsh interface ip set dns "enclave8675309" static 100.113.163.166
+
+
+forwarding DNS to your enclave nameserver
+	https://learn.hashicorp.com/consul/security-networking/forwarding#systemd-resolved-setup
+	https://unix.stackexchange.com/questions/128220/how-do-i-set-my-dns-when-resolv-conf-is-being-overwritten
+	https://www.cyberciti.biz/faq/dhclient-etcresolvconf-hooks/ (make sure enclave is starting with the OS / interface is up)
+
+
+Win API flags?
+Use DhcpNotifyConfigChange to notify the IP change.
+Use DnsFlushResolverCache to flush the DNS.
+
+

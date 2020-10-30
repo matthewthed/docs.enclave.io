@@ -1,0 +1,15 @@
+---
+layout: layout-page-docs
+css-section: docs-knowledge-base
+parent: "Knowledge Base"
+parentPath: kb
+title: "Managing licenses with restrictions"
+subtitle: "Enclave Documentation"
+contentPreview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus elementum, nunc in faucibus malesuada, mi augue congue nunc, id vehicula diam tellus eu sem. Maecenas ac egestas mi."
+---
+
+# {{page.title}}
+
+## Heading
+
+No content

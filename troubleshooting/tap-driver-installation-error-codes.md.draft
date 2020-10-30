@@ -1,0 +1,16 @@
+---
+layout: layout-page-docs
+css-section: docs-troubleshooting
+parent: Troubleshooting
+parentPath: troubleshooting
+title: "TAP driver installation error codes"
+subtitle: "test test test"
+contentPreview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus elementum, nunc in faucibus malesuada, mi augue congue nunc, id vehicula diam tellus eu sem. Maecenas ac egestas mi."
+indexed: true
+---
+
+# {{page.title}}
+
+## Heading
+
+No content, test page.

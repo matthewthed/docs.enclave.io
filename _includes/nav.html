@@ -1,0 +1,71 @@
+<header>
+	<nav class="navbar navbar-default navbar-top" role="navigation">
+		<div class="container">
+
+			<a class="navbar-brand" href="/">
+                <img alt="Enclave" src="/img/enclave-header-logo.png">    
+			</a>
+
+			<div class="navbar-header">
+                <button type="button" class="fa fa-bars navbar-toggle " data-toggle="collapse" data-target="#navbar-main" aria-hidden="true" ></button>
+			</div>
+
+			<div id="navbar-main" class="navbar-collapse navbar-right collapse">
+				<ul class="nav navbar-nav">
+					<li><a class="btn-login" href="https://portal.enclave.io">Log in</a></li>
+                    <li><a class="btn-download" href="https://portal.enclave.io/account/register">Get Started</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+</header>
+
+<script>
+    
+    window.addEventListener('DOMContentLoaded', function() 
+    {
+        $(document).ready(function() 
+        {
+            $('nav .expandable').click(function() 
+            {
+                // disable click action on desktop menu
+                if ($( document ).width() > 991) return;
+
+                $('.submenu', this).toggle();
+                $(this).find(':first-child').first().toggleClass('hover');
+            });
+
+            $('nav .expandable').hover(
+                function() {
+                    // disable hover action on collapsed mobile menu
+                    if ($( document ).width() <= 991) return;
+
+                    // style menu item
+                    $(this).find(':first-child').first().addClass('hover');
+
+                    // show sub-menu
+                    $('.submenu', this).stop().show();
+                },
+                function() {
+                    // disable hover action on collapsed mobile menu
+                    if ($( document ).width() <= 991) return;
+
+                    // un-style menu item
+                    $(this).find(':first-child').first().removeClass('hover'); 
+
+                    // hide sub-menu
+                    $('.submenu', this).stop().hide();
+                }
+            );
+
+            $(window).scroll(function() {
+
+                var offset = 70 - $(document).scrollTop();
+
+                $('.submenu').css("top", offset + "px");
+                $('.submenu').stop().hide();
+            });
+        });
+    });
+
+</script>

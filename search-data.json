@@ -1,0 +1,15 @@
+---
+---
+
+{% assign entries = site.html_pages | where:"indexed", "true" %}
+
+{
+{% for page in entries %}
+    "{{ forloop.index0 }}": {
+        "title": "{{ page.title | replace: '&amp;', '&' }}",
+        "content": {{ page.content | strip_html | normalize_whitespace | jsonify }},
+        "url": "{{ page.url | absolute_url | remove: ".html" }}",
+        "relUrl": "{{ page.url | remove: ".html" }}"
+    }{% unless forloop.last %},{% endunless %}
+{% endfor %}
+}
