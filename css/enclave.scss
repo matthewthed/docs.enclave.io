@@ -5,9 +5,12 @@ $font-heading: "Lato";
 $font-roboto: "Roboto";
 $font-opensans: "Open Sans", "Helvetica";
 
-$white: #FFFFFF;
-$sky: #a60b0b;
-$arctic: #71B8E2;
+$white: #fff;
+$dark-black: #111;
+$light-black: #333;
+$black: #000;
+$primary: #BE0D0D;
+$primary-hover: #a60b0b;
 $href: #008cde;
 
 $box-shadow: 0 1px 1px rgba(27, 31, 35, 0.10);
@@ -27,7 +30,7 @@ html, body {
     min-height: 100% !important;
     height: 100%;
 
-    background-color: #FFFFFF;
+    background-color: $white;
     -webkit-overflow-scrolling : touch !important;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
@@ -37,7 +40,7 @@ html, body {
     }
     
     h1 {
-        color: #333;
+        color: $light-black;
         margin: 46px auto 8px auto;
         padding: 0;
         font-size: 30px;
@@ -123,7 +126,7 @@ html, body {
     
         p {
             font-family: $font-roboto;
-            color: #000;
+            color: $black;
             font-size: 14px;
         }
     }
@@ -287,13 +290,13 @@ html, body {
     }
     
     ::-moz-selection {
-        color: #fff;
+        color: $white;
         background: rgba(0, 23, 47, 0.7);
         
     }
     
     ::selection {
-        color: #fff;
+        color: $white;
         background: rgba(0, 23, 47, 0.7);
     }
     
@@ -349,7 +352,7 @@ nav.navbar {
             
             a.btn-download {
                 color: $white;
-                background: #BE0D0D;
+                background: $primary;
                 border-radius: 2px;
                 font-weight: bold;
                 font-size: 10px;
@@ -360,7 +363,7 @@ nav.navbar {
         
             a.btn-download:hover {
                 color: $white;
-                background:  $sky;
+                background: $primary-hover;
             }
 
             a.btn-login:hover {
@@ -369,10 +372,10 @@ nav.navbar {
 
             .hover {
                 color: $white;
-                border-bottom: solid 5px #fff;
+                border-bottom: solid 5px $white;
                 
                 i {
-                    border: solid #fff;
+                    border: solid $white;
                     border-width: 0 2px 2px 0;
                     -webkit-transform: rotate(-45deg);
                     -moz-transform: rotate(-45deg);
@@ -392,11 +395,10 @@ nav.navbar {
             .active {
                 color: #ccc;
                 border-bottom: solid 5px #ccc;
-                // border-bottom: solid 5px $arctic;
             }
 
             .active:hover {
-                border-bottom: solid 5px #fff;
+                border-bottom: solid 5px $white;
             }
         }
 
@@ -416,7 +418,7 @@ nav.navbar {
             top: 70px;
             left: 0;
             right: 0;
-            background-color: #fff;
+            background-color: $white;
             box-shadow: 0 16px 24px 0 rgba(0,0,0,.08);
             padding: 50px 0 50px 0;
             overflow: hidden;
@@ -582,7 +584,7 @@ nav.navbar {
     top: 0;
     z-index: 1;
     width: 100%;
-    background: #fff; /* #2a2b30;*/
+    background: $white; /* #2a2b30;*/
     border-color: transparent;
     border-radius: 0;
     border: 0;
@@ -593,17 +595,17 @@ nav.navbar {
         border-radius: 0;
         background-color: transparent;
         border: none;
-        color: #000;
+        color: $black;
         font-size: 28px;
     }
 
     .navbar-toggle:hover {
-        color: #BE0D0D;
+        color: $primary;
     }
 
     .navbar-toggle:focus {
         background-color: transparent;
-        color: #BE0D0D;
+        color: $primary;
     }
 }
 
@@ -632,7 +634,7 @@ nav.navbar {
 
         h1 {
             border: none;
-            color: #333;
+            color: $light-black;
             padding: 0;
             font-size: 26pt;
             line-height: 40pt;
@@ -667,7 +669,7 @@ nav.navbar {
 
 #footer {
 
-    background-color: #000;
+    background-color: $black;
     color: #dcdbdb;
     padding: 140px 0;
     font-family: $font-roboto;
@@ -693,7 +695,7 @@ nav.navbar {
 
 	a {
 		font-size: 14px;
-        color: #fff;
+        color: $white;
         line-height: 21px;
 	}
 
@@ -735,7 +737,7 @@ nav.navbar {
             padding: 0;
             font-size: 14px;
             font-family: inherit;
-            color: #fff;
+            color: $white;
             line-height: 24.5px;
 
             strong {
@@ -779,7 +781,7 @@ nav.navbar {
     }
 
     #section-page {
-        background-color: #ffffff;
+        background-color: $white;
         margin: 70px 0 160px 0;
 
         .toc-heading {
@@ -843,7 +845,7 @@ nav.navbar {
     
         h2 {
             font-size: 26px;
-            color: #333;
+            color: $light-black;
             margin: 56px 0 16px 0;
         }
 
@@ -879,7 +881,7 @@ nav.navbar {
 }
 
 #docs-index-page {
-    background-color: #fff;
+    background-color: $white;
 
     #hero {
         padding-bottom: 70px; 
@@ -896,7 +898,7 @@ nav.navbar {
         h1 {
             text-align: center;
             font-size: 21pt;
-            color: #333;
+            color: $light-black;
         }
 
         input {
@@ -910,7 +912,7 @@ nav.navbar {
             color: #555;
             padding: 0 20px 0 42px;
             position: relative;
-            background-color: #fff;
+            background-color: $white;
             background-image: none;
             border: 1px solid #efefef;
             -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
@@ -937,7 +939,7 @@ nav.navbar {
             position: absolute;
             z-index: 100;
             width: 100%;
-            background: #fff;
+            background: $white;
             border-radius: 4px;
             box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 3px 10px rgba(0, 0, 0, 0.08);
             margin-top: 2px;
@@ -1019,7 +1021,7 @@ nav.navbar {
             a {
                 display: inline-block;
                 position: relative;
-                background: #fff;
+                background: $white;
                 border-radius: 8px;
                 text-align: left;
                 padding: 36px 36px 16px 36px;
@@ -1092,7 +1094,7 @@ nav.navbar {
 
         h1 {
             font-size: 18pt;
-            color: #333;
+            color: $light-black;
         }
 
         .item {
@@ -1125,7 +1127,7 @@ nav.navbar {
 
         .tile {
             display: block;
-            background: #fff;
+            background: $white;
             border-radius: 4px;
             box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.01);
             text-decoration: none;
@@ -1186,14 +1188,14 @@ nav.navbar {
         }
         
         li a:hover {
-            background-color: #fff;
+            background-color: $white;
             opacity: 1;
         }
 
         li.active a {
             background-color: #374365;
             border: 1px solid #374365;
-            color: #fff;
+            color: $white;
             opacity: 1;
         }
     }
@@ -1230,7 +1232,7 @@ nav.navbar {
 				a:hover {
 				   background-color: #374365;
 				   border: 1px solid #374365;
-				   color: #fff;
+				   color: $white;
 				}
 			}
         }
@@ -1358,7 +1360,7 @@ ul.tabs {
 /* misc */
 
 .form-control:focus {
-    border-color: #fff;
+    border-color: $white;
     box-shadow: 0 0 0 0.3rem rgba(0,123,255,.3);
 }
 
@@ -1578,10 +1580,10 @@ ul.tabs {
                     a:hover,
                     a:active,
                     a:focus {
-                        color: #fff;
+                        color: $white;
 
                         i {
-                            border-color: #fff;
+                            border-color: $white;
                             margin: 0 0 1px 8px;
                         }
                     }
